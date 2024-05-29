@@ -2,6 +2,10 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import { availability } from 'sanity-plugin-availability'
+
+import {structure} from './structure'
+import {defaultDocumentNode} from './structure/defaultDocumentNode'
 
 export default defineConfig({
   name: 'default',
@@ -10,7 +14,7 @@ export default defineConfig({
   projectId: 'dfen2r5i',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool(), visionTool(), availability()],
 
   schema: {
     types: schemaTypes,
