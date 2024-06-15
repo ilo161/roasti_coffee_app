@@ -9,6 +9,10 @@ export const businessType = defineType({
     fields:  [
         defineField({
             name: 'businessName',
+            type: 'string'
+        }),
+        defineField({
+            name: 'businessType',
             type: 'string',
             options: {
             list: ['roaster', 'cafe', 'hybrid'],

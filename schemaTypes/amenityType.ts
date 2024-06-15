@@ -1,6 +1,6 @@
-import {defineField, defineType} from 'sanity'
+// import {defineField, defineType} from 'sanity'
 
-export const amenityType = defineType({
-    name: "amenity",
-    title: ""
-})
+// export const amenityType = defineType({
+//     name: "amenity",
+//     title: ""
+// })
