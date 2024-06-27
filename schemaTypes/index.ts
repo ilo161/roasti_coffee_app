@@ -2,8 +2,9 @@
 // import { eventType } from "./eventType";
 // import { venueType } from "./venueType";
 // Roasti 
+import { amenityType } from "./amenityType";
 import { businessType } from "./businessType";
 import { coffeeBagType } from "./coffeeBagType";
 
 // export const schemaTypes = [eventType, artistType, venueType, businessType]
-export const schemaTypes = [businessType, coffeeBagType]
+export const schemaTypes = [businessType, coffeeBagType, amenityType]

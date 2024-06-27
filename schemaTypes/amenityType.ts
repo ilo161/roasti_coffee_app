@@ -1,6 +1,18 @@
-// import {defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
+import { IoRibbonSharp } from "react-icons/io5";
+import { MdMenuBook } from "react-icons/md";
 
-// export const amenityType = defineType({
-//     name: "amenity",
-//     title: ""
-// })
+// <IoRibbonSharp />
+
+export const amenityType = defineType({
+    name: 'amenity',
+    title: 'Amenity',
+    type: 'document',
+    icon: MdMenuBook,
+    fields:  [
+        defineField({
+            name: 'amenityName',
+            type: 'string'
+        })
+    ]
+})

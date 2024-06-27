@@ -30,7 +30,7 @@ export const coffeeBagType = defineType({
             name: 'roastLevel',
             title: 'Roast Level',
             type: 'number',
-            description: 'The roast level of the coffee bag. For example, medium roast which is 3.',
+            description: 'The roast level of the coffee bag. For example, Light:1, light-medium:2, medium:3, medium-dark:4, dark:5',
             validation: rule => rule.required().min(0).max(5)
         }),
         defineField({
@@ -71,6 +71,6 @@ export const coffeeBagType = defineType({
             type: 'string',
             description: 'Description on the bag or website',
         }),
-    ],
+    ]
  })
 

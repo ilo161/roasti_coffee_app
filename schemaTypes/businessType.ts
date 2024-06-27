@@ -11,13 +11,51 @@ export const businessType = defineType({
             name: 'businessName',
             type: 'string'
         }),
+        // defineField({
+        //     name: 'businessType',
+        //     type: 'string',
+        //     options: {
+        //     list: ['roaster', 'cafe'],
+        //     layout: 'radio',
+        //     },
+        // }),
         defineField({
-            name: 'businessType',
-            type: 'string',
-            options: {
-            list: ['roaster', 'cafe', 'hybrid'],
-            layout: 'radio',
-            },
+            name: "isRoaster",
+            type: "boolean"
+        }),
+        defineField({
+            name: "isCafe",
+            type: "boolean"
+        }),
+        defineField({
+            name: 'roasteryUsed',
+            title: 'Roaster',
+            description: 'The business that roasted this coffee bag.',
+            type: 'reference',
+            to: [{type: 'business'}],
+            validation: rule => rule.required()
+        }),
+        defineField({          
+            name: 'amenities',
+            title: 'Amenities',
+            type: 'array',
+            of: [
+                {
+                type: 'reference', 
+                to: [
+                    {type: 'amenity'}
+                    ]
+                }
+             ]
+        }),
+        
+        defineField({
+            name: "hasPastry",
+            type: "boolean"
+        }),
+        defineField({
+            name: "hasFood",
+            type: "boolean"
         }),
         defineField({
             name:'motto_slogan',
@@ -39,6 +77,7 @@ export const businessType = defineType({
             name: "region",
             type: "string"
         }),
+
         defineField({
             name: "address",
             type: "string"
@@ -60,37 +99,31 @@ export const businessType = defineType({
             type: "url"
         }),
         defineField({
+            name: "emailAlpha",
+            type: "email"
+        }),
+        defineField({
+            name: "emailOwner",
+            type: "email"
+        }),defineField({
+            name: "emailMarketing",
+            type: "email"
+        }),
+        defineField({
+            name: "emailSales",
+            type: "email"
+        }),
+        defineField({
+            name: "emailOther",
+            type: "email"
+        }),
+        defineField({
             name: "phone",
             type: "string"
         }),
         defineField({
             name: "phoneExt",
             type: "string"
-        }),
-        defineField({
-            name: "isRoaster",
-            type: "boolean"
-        }),
-        defineField({
-            name: "roasteryUsed",
-            description: 'Which Roaster Do They Use?',
-            type: "string"
-        }),
-        defineField({
-            name: "isOrganic",
-            type: "boolean"
-        }),
-        defineField({
-            name: "hasOnlineOrdering",
-            type: "boolean"
-        }),
-        defineField({
-            name: "hasPastry",
-            type: "boolean"
-        }),
-        defineField({
-            name: "hasFood",
-            type: "boolean"
         }),
         defineField({
             name: "openTime",
