@@ -11,20 +11,8 @@ export const businessType = defineType({
             name: 'businessName',
             type: 'string'
         }),
-        // defineField({
-        //     name: 'businessType',
-        //     type: 'string',
-        //     options: {
-        //     list: ['roaster', 'cafe'],
-        //     layout: 'radio',
-        //     },
-        // }),
         defineField({
             name: "isRoaster",
-            type: "boolean"
-        }),
-        defineField({
-            name: "isCafe",
             type: "boolean"
         }),
         defineField({
@@ -48,15 +36,6 @@ export const businessType = defineType({
                 }
              ]
         }),
-        
-        defineField({
-            name: "hasPastry",
-            type: "boolean"
-        }),
-        defineField({
-            name: "hasFood",
-            type: "boolean"
-        }),
         defineField({
             name:'motto_slogan',
             type: 'string'
@@ -74,10 +53,23 @@ export const businessType = defineType({
             type: 'string'
         }),
         defineField({
-            name: "region",
-            type: "string"
+            name: 'usaRegion',
+            title: 'USA Region',
+            type: 'string',
+            options: {
+                list: [
+                { title: 'US-North', value: 'us-north' },
+                { title: 'US-North-West', value: 'us-north-west' },
+                { title: 'US-North-East', value: 'us-north-east' },
+                { title: 'US-South', value: 'us-south' },
+                { title: 'US-South-West', value: 'us-south-west' },
+                { title: 'US-South-East', value: 'us-south-east' },
+                { title: 'US-East',  value: 'us-east' },
+                { title: 'US-West',  value: 'us-west' },
+                ], // <-- predefined values
+        //layout: 'radio' // <-- defaults to 'dropdown'
+            }
         }),
-
         defineField({
             name: "address",
             type: "string"
@@ -100,6 +92,10 @@ export const businessType = defineType({
         }),
         defineField({
             name: "emailAlpha",
+            type: "email"
+        }),
+        defineField({
+            name: "emailShipping",
             type: "email"
         }),
         defineField({
@@ -149,10 +145,6 @@ export const businessType = defineType({
             name: "closeTimeSun",
             type: "number"
         }),
-        defineField({
-            name: "hasWifi",
-            type: "boolean"
-        })
     ],
 })
 
