@@ -21,7 +21,15 @@ export const businessType = defineType({
             description: 'The business that roasted this coffee bag.',
             type: 'reference',
             to: [{type: 'business'}],
-            validation: rule => rule.required()
+           
+            hidden: ({document}) => {
+                if(document?.isRoaster === true){
+                    console.log(document.roasteryUsed)
+                    document.roasteryUsed = undefined
+                }
+                return document?.isRoaster === true
+                },    
+            
         }),
         defineField({          
             name: 'amenities',
