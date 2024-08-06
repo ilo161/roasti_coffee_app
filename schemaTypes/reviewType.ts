@@ -16,7 +16,20 @@ export const reviewType = defineType({
             validation: rule => rule.required()
         }),
         defineField({
+            name: 'reviewClearedForLanguage',
+            title: 'Review cleared for site',
+            type:'string',
+            description: 'App Support Team This boolean prevents reviewBody from showing up on site until language has been checked for profanity and good taste.',
+        }),
+        defineField({
             name: 'reviewTitle',
+            type: 'string',
+            validation: rule => rule.required()
+        }),
+        defineField({
+            name: 'reviewRating',
+            title: 'Review Rating',
+            description: 'The star rating 1-5. 5 is best',
             type: 'string',
             validation: rule => rule.required()
         }),
@@ -27,6 +40,13 @@ export const reviewType = defineType({
             type: 'reference',
             to: [{type: 'business'}],
             validation: rule => rule.required()
+        }),
+        defineField({
+            name: 'RoasterId',
+            title: 'Roaster Id',
+            description: 'The RoasterID(Biz ID) that is getting reviewed.',
+            type: 'reference',
+            to: [{type: 'business'}]
         }),
         defineField({
             name: 'coffeeBagTypeId',
@@ -41,13 +61,7 @@ export const reviewType = defineType({
             description: 'User review description',
             type: 'string',
             validation: rule => rule.required()
-        }),
-        defineField({
-            name: 'reviewRating',
-            title: 'Review Rating',
-            description: 'The star rating 1-5. 5 is best',
-            type: 'string',
-            validation: rule => rule.required()
         })
+        
     ]
 })
