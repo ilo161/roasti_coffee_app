@@ -34,6 +34,11 @@ export const coffeeBagType = defineType({
             validation: rule => rule.required().min(0).max(5)
         }),
         defineField({
+            name: 'process',
+            title: 'Wash Process for bean(s)',
+            type: 'string',
+        }),
+        defineField({
             name: 'imgFront',
             title: 'Front Image',
             type: 'image',
@@ -64,6 +69,12 @@ export const coffeeBagType = defineType({
             title: 'Single Origin',
             type: 'boolean',
             description: 'Is this coffee bag a single origin or a blend?',
+        }),
+        defineField({
+            name: 'elevation',
+            title: 'Elevation of harvest',
+            type: 'number',
+            description: 'Elevation of a single origin(blends dont apply)',
         }),
         defineField({
             name: 'description',
